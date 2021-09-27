@@ -1,0 +1,22 @@
+body::before{
+    display:block;
+    content:'';
+    height:85px;
+}
+
+a{
+    color:white;
+    text-decoration: none;
+}
+
+a:hover{
+    color:#aaa;
+}
+
+.btn:hover{
+    color:#aaa;
+}
+
+#current{
+    color:#aa5555
+}
