@@ -6,9 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <title>NFL | Standings</title>
+    <style>
+        body::before{
+            display:block;
+            content:'';
+            height:140px;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-primary navbar-dark py-3">
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark py-3 fixed-top">
         <div class="container">
             <img src="images/logo.png" width="75" class="px-2">
             <button class="navbar-toggler" type="button" data-bs-toggle=collapse data-bs-target="#navmenu">
@@ -29,6 +36,204 @@
             </div>
         </div>
     </nav>
+    <div class="container">
+        <div id="main" class="card card-body">
+           <h2 class="title">National Football Conference</h2>
+           <table class="table table-striped">
+              <thead>
+                 <tr>
+                     <th scope="col" onclick="sort('team');">NFC North</th>
+                     <th scope="col" onclick="sort('wins');">Wins</th>
+                     <th scope="col" onclick="sort('losses');">Losses</th>
+                     <th scope="col" onclick="sort('PCT');">PCT</th>
+                     <th scope="col" onclick="sort('PF');">PF</th>
+                     <th scope="col" onclick="sort('PA');">PA</th>
+                     <th scope="col" onclick="sort('net');">Net Pts</th>
+                     <th scope="col" onclick="sort('home');">Home</th>
+                     <th scope="col" onclick="sort('road');">Road</th>
+                     <th scope="col" onclick="sort('div');">Div</th>
+                     <th scope="col" onclick="sort('divPCT');">PCT</th>
+                     <th scope="col" onclick="sort('conf');">Conf</th>
+                     <th scope="col" onclick="sort('confPCT');">PCT</th>
+                     <th scope="col" onclick="sort('nonconf');">Non-Conf</th>
+                     <th scope="col" onclick="sort('streak');">Strk</th>
+                     <th scope="col" onclick="sort('last5');">Last 5</th>
+                 </tr>
+              </thead>
+              <tbody id="NFCNorthRows">
+              </tbody>
+           </table>
+           <table class="table table-striped">
+            <thead>
+               <tr>
+                  <th scope="col" onclick="sort('team');">NFC East</th>
+                  <th scope="col" onclick="sort('wins');">Wins</th>
+                  <th scope="col" onclick="sort('losses');">Losses</th>
+                  <th scope="col" onclick="sort('PCT');">PCT</th>
+                  <th scope="col" onclick="sort('PF');">PF</th>
+                  <th scope="col" onclick="sort('PA');">PA</th>
+                  <th scope="col" onclick="sort('net');">Net Pts</th>
+                  <th scope="col" onclick="sort('home');">Home</th>
+                  <th scope="col" onclick="sort('road');">Road</th>
+                  <th scope="col" onclick="sort('div');">Div</th>
+                  <th scope="col" onclick="sort('divPCT');">PCT</th>
+                  <th scope="col" onclick="sort('conf');">Conf</th>
+                  <th scope="col" onclick="sort('confPCT');">PCT</th>
+                  <th scope="col" onclick="sort('nonconf');">Non-Conf</th>
+                  <th scope="col" onclick="sort('streak');">Strk</th>
+                  <th scope="col" onclick="sort('last5');">Last 5</th>
+               </tr>
+            </thead>
+            <tbody id="NFCEastRows">
+            </tbody>
+         </table>
+         <table class="table table-striped">
+            <thead>
+               <tr>
+                <th scope="col" onclick="sort('team');">NFC South</th>
+                <th scope="col" onclick="sort('wins');">Wins</th>
+                <th scope="col" onclick="sort('losses');">Losses</th>
+                <th scope="col" onclick="sort('PCT');">PCT</th>
+                <th scope="col" onclick="sort('PF');">PF</th>
+                <th scope="col" onclick="sort('PA');">PA</th>
+                <th scope="col" onclick="sort('net');">Net Pts</th>
+                <th scope="col" onclick="sort('home');">Home</th>
+                <th scope="col" onclick="sort('road');">Road</th>
+                <th scope="col" onclick="sort('div');">Div</th>
+                <th scope="col" onclick="sort('divPCT');">PCT</th>
+                <th scope="col" onclick="sort('conf');">Conf</th>
+                <th scope="col" onclick="sort('confPCT');">PCT</th>
+                <th scope="col" onclick="sort('nonconf');">Non-Conf</th>
+                <th scope="col" onclick="sort('streak');">Strk</th>
+                <th scope="col" onclick="sort('last5');">Last 5</th>
+               </tr>
+            </thead>
+            <tbody id="NFCSouthRows">
+            </tbody>
+         </table>
+         <table class="table table-striped">
+            <thead>
+               <tr>
+                <th scope="col" onclick="sort('team');">NFC West</th>
+                <th scope="col" onclick="sort('wins');">Wins</th>
+                <th scope="col" onclick="sort('losses');">Losses</th>
+                <th scope="col" onclick="sort('PCT');">PCT</th>
+                <th scope="col" onclick="sort('PF');">PF</th>
+                <th scope="col" onclick="sort('PA');">PA</th>
+                <th scope="col" onclick="sort('net');">Net Pts</th>
+                <th scope="col" onclick="sort('home');">Home</th>
+                <th scope="col" onclick="sort('road');">Road</th>
+                <th scope="col" onclick="sort('div');">Div</th>
+                <th scope="col" onclick="sort('divPCT');">PCT</th>
+                <th scope="col" onclick="sort('conf');">Conf</th>
+                <th scope="col" onclick="sort('confPCT');">PCT</th>
+                <th scope="col" onclick="sort('nonconf');">Non-Conf</th>
+                <th scope="col" onclick="sort('streak');">Strk</th>
+                <th scope="col" onclick="sort('last5');">Last 5</th>
+               </tr>
+            </thead>
+            <tbody id="NFCWestRows">
+            </tbody>
+         </table>
+         <h2 class="title">American Football Conference</h2>
+         <table class="table table-striped">
+            <thead>
+               <tr>
+                <th scope="col" onclick="sort('team');">AFC North</th>
+                <th scope="col" onclick="sort('wins');">Wins</th>
+                <th scope="col" onclick="sort('losses');">Losses</th>
+                <th scope="col" onclick="sort('PCT');">PCT</th>
+                <th scope="col" onclick="sort('PF');">PF</th>
+                <th scope="col" onclick="sort('PA');">PA</th>
+                <th scope="col" onclick="sort('net');">Net Pts</th>
+                <th scope="col" onclick="sort('home');">Home</th>
+                <th scope="col" onclick="sort('road');">Road</th>
+                <th scope="col" onclick="sort('div');">Div</th>
+                <th scope="col" onclick="sort('divPCT');">PCT</th>
+                <th scope="col" onclick="sort('conf');">Conf</th>
+                <th scope="col" onclick="sort('confPCT');">PCT</th>
+                <th scope="col" onclick="sort('nonconf');">Non-Conf</th>
+                <th scope="col" onclick="sort('streak');">Strk</th>
+                <th scope="col" onclick="sort('last5');">Last 5</th>
+               </tr>
+            </thead>
+            <tbody id="AFCNorthRows">
+            </tbody>
+         </table>
+         <table class="table table-striped">
+            <thead>
+               <tr>
+                <th scope="col" onclick="sort('team');">AFC East</th>
+                <th scope="col" onclick="sort('wins');">Wins</th>
+                <th scope="col" onclick="sort('losses');">Losses</th>
+                <th scope="col" onclick="sort('PCT');">PCT</th>
+                <th scope="col" onclick="sort('PF');">PF</th>
+                <th scope="col" onclick="sort('PA');">PA</th>
+                <th scope="col" onclick="sort('net');">Net Pts</th>
+                <th scope="col" onclick="sort('home');">Home</th>
+                <th scope="col" onclick="sort('road');">Road</th>
+                <th scope="col" onclick="sort('div');">Div</th>
+                <th scope="col" onclick="sort('divPCT');">PCT</th>
+                <th scope="col" onclick="sort('conf');">Conf</th>
+                <th scope="col" onclick="sort('confPCT');">PCT</th>
+                <th scope="col" onclick="sort('nonconf');">Non-Conf</th>
+                <th scope="col" onclick="sort('streak');">Strk</th>
+                <th scope="col" onclick="sort('last5');">Last 5</th>
+               </tr>
+            </thead>
+            <tbody id="AFCEastRows">
+            </tbody>
+         </table>
+         <table class="table table-striped">
+            <thead>
+               <tr>
+                <th scope="col" onclick="sort('team');">AFC South</th>
+                <th scope="col" onclick="sort('wins');">Wins</th>
+                <th scope="col" onclick="sort('losses');">Losses</th>
+                <th scope="col" onclick="sort('PCT');">PCT</th>
+                <th scope="col" onclick="sort('PF');">PF</th>
+                <th scope="col" onclick="sort('PA');">PA</th>
+                <th scope="col" onclick="sort('net');">Net Pts</th>
+                <th scope="col" onclick="sort('home');">Home</th>
+                <th scope="col" onclick="sort('road');">Road</th>
+                <th scope="col" onclick="sort('div');">Div</th>
+                <th scope="col" onclick="sort('divPCT');">PCT</th>
+                <th scope="col" onclick="sort('conf');">Conf</th>
+                <th scope="col" onclick="sort('confPCT');">PCT</th>
+                <th scope="col" onclick="sort('nonconf');">Non-Conf</th>
+                <th scope="col" onclick="sort('streak');">Strk</th>
+                <th scope="col" onclick="sort('last5');">Last 5</th>
+               </tr>
+            </thead>
+            <tbody id="AFCSouthRows">
+            </tbody>
+         </table>
+         <table class="table table-striped">
+            <thead>
+               <tr>
+                  <th scope="col" onclick="sort('team');">AFC West</th>
+                  <th scope="col" onclick="sort('wins');">Wins</th>
+                  <th scope="col" onclick="sort('losses');">Losses</th>
+                  <th scope="col" onclick="sort('PCT');">PCT</th>
+                  <th scope="col" onclick="sort('PF');">PF</th>
+                  <th scope="col" onclick="sort('PA');">PA</th>
+                  <th scope="col" onclick="sort('net');">Net Pts</th>
+                  <th scope="col" onclick="sort('home');">Home</th>
+                  <th scope="col" onclick="sort('road');">Road</th>
+                  <th scope="col" onclick="sort('div');">Div</th>
+                  <th scope="col" onclick="sort('divPCT');">PCT</th>
+                  <th scope="col" onclick="sort('conf');">Conf</th>
+                  <th scope="col" onclick="sort('confPCT');">PCT</th>
+                  <th scope="col" onclick="sort('nonconf');">Non-Conf</th>
+                  <th scope="col" onclick="sort('streak');">Strk</th>
+                  <th scope="col" onclick="sort('last5');">Last 5</th>
+               </tr>
+            </thead>
+            <tbody id="AFCWestRows">
+            </tbody>
+         </table>
+        </div>
+     </div>
     <script src="sportsWebsite.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
