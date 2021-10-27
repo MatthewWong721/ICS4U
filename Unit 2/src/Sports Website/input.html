@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>NFL | Enter a score</title>
+    <style>
+        body::before{
+            display:block;
+            content:'';
+            height:160px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark py-3 fixed-top">
+        <div class="container">
+            <img src="images/logo.png" width="75" class="px-2">
+            <button class="navbar-toggler" type="button" data-bs-toggle=collapse data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="standings.html" class="nav-link fw-bold fs-5 px-5">Standings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="scores.html" class="nav-link fw-bold fs-5 px-5">Scores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link fw-bold fs-5 ps-5 text-dark">Enter a Score</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="bg-white text-dark">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-auto py-3">
+                    <label class="form-label">Home Team</label>
+                    <select class="form-select" id="homeTeam">
+                        <option selected></option>
+                        <option value="ARI">ARI</option>
+                        <option value="ATL">ATL</option>
+                        <option value="BAL">BAL</option>
+                        <option value="BUF">BUF</option>
+                        <option value="CAR">CAR</option>
+                        <option value="CHI">CHI</option>
+                        <option value="CIN">CIN</option>
+                        <option value="CLE">CLE</option>
+                        <option value="DAL">DAL</option>
+                        <option value="DEN">DEN</option>
+                        <option value="DET">DET</option>
+                        <option value="GB">GB</option>
+                        <option value="HOU">HOU</option>
+                        <option value="IND">IND</option>
+                        <option value="JAX">JAX</option>
+                        <option value="KC">KC</option>
+                        <option value="LV">LV</option>
+                        <option value="LAC">LAC</option>
+                        <option value="LAR">LAR</option>
+                        <option value="MIA">MIA</option>
+                        <option value="MIN">MIN</option>
+                        <option value="NE">NE</option>
+                        <option value="NO">NO</option>
+                        <option value="NYG">NYG</option>
+                        <option value="NYJ">NYJ</option>
+                        <option value="PHI">PHI</option>
+                        <option value="PHI">PIT</option>
+                        <option value="SF">SF</option>
+                        <option value="SEA">SEA</option>
+                        <option value="TB">TB</option>
+                        <option value="TEN">TEN</option>
+                        <option value="WAS">WAS</option>
+                    </select>
+                </div>
+                <div class="col-auto py-3">
+                    <label class="form-label">Home Team Score</label>
+                    <input type="text" class="form-control" id="homeTeamScore">
+                </div>
+                <div class="col-auto py-3">
+                    <label class="form-label">Away Team</label>
+                    <select class="form-select" id="awayTeam">
+                        <option selected></option>
+                        <option value="ARI">ARI</option>
+                        <option value="ATL">ATL</option>
+                        <option value="BAL">BAL</option>
+                        <option value="BUF">BUF</option>
+                        <option value="CAR">CAR</option>
+                        <option value="CHI">CHI</option>
+                        <option value="CIN">CIN</option>
+                        <option value="CLE">CLE</option>
+                        <option value="DAL">DAL</option>
+                        <option value="DEN">DEN</option>
+                        <option value="DET">DET</option>
+                        <option value="GB">GB</option>
+                        <option value="HOU">HOU</option>
+                        <option value="IND">IND</option>
+                        <option value="JAX">JAX</option>
+                        <option value="KC">KC</option>
+                        <option value="LV">LV</option>
+                        <option value="LAC">LAC</option>
+                        <option value="LAR">LAR</option>
+                        <option value="MIA">MIA</option>
+                        <option value="MIN">MIN</option>
+                        <option value="NE">NE</option>
+                        <option value="NO">NO</option>
+                        <option value="NYG">NYG</option>
+                        <option value="NYJ">NYJ</option>
+                        <option value="PHI">PHI</option>
+                        <option value="PHI">PIT</option>
+                        <option value="SF">SF</option>
+                        <option value="SEA">SEA</option>
+                        <option value="TB">TB</option>
+                        <option value="TEN">TEN</option>
+                        <option value="WAS">WAS</option>
+                    </select>
+                </div>
+                <div class="col-auto py-3">
+                    <label class="form-label">Away Team Score</label>
+                    <input type="text" class="form-control" id="awayTeamScore">
+                </div>
+                <div class="col-auto py-3">
+                    <label class="form-label">Date</label>
+                    <input type="text" class="form-control" placeholder="yyyy-mm-dd" id="date">
+                </div>
+            </div>
+            <div class="text-center py-5">
+                <button class="btn btn-primary btn-lg" type="button" onclick="inputScore();">Submit</button>
+            </div>
+        </div>
+    </section>
+    <script src="sportsWebsite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+</html>
