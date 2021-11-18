@@ -1,9 +1,25 @@
 <template>
-  <div id="nav">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+  <nav class="navbar navbar-expand-lg bg-primary navbar-dark py-3 fixed-top">
+    <div class="container">
+      <img src="images/logo.png" width="75" class="px-2">
+      <button class="navbar-toggler" type="button" data-bs-toggle=collapse data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <router-link to="/standings" class="nav-link fw-bold fs-5 px-5">Standings</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/standings" class="nav-link fw-bold fs-5 px-5">Standings</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/standings" class="nav-link fw-bold fs-5 px-5">Standings</router-link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </template>
 
 <style>
