@@ -200,9 +200,9 @@ function sortByDate(){
 }
 
 function load(){
-    if(window.location.href==="http://127.0.0.1:5500/Unit%202/src/Sports%20Website/scores.html"){
+    if(window.location.href==="http://127.0.0.1:5500/scores.html"){
         createScores()
-    }else if(window.location.href==="http://127.0.0.1:5500/Unit%202/src/Sports%20Website/standings.html")
+    }else if(window.location.href==="http://127.0.0.1:5500/standings.html")
         createStandings()
 }
 
