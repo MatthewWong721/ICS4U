@@ -5,7 +5,7 @@ import Input from '@/views/Input.vue'
 
 const routes = [
   {
-    path: '/standings',
+    path: '/',
     name: 'Standings',
     component: Standings,
     props: true
